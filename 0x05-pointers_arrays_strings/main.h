@@ -1,21 +1,29 @@
-main.h
- void reset_to_98(int *n); 
+#ifndef MAIN_H
+#define MAIN_H
 
- void swap_int(int *a, int *b); 
+#include <stdio.h>
 
- int _strlen(char *s); 
+int _putchar(char c);
 
- void _puts(char *str); 
+void reset_to_98(int *n);
 
- void print_rev(char *s); 
+void swap_int(int *a, int *b);
 
- void rev_string(char *s); 
+int _strlen(char *s);
 
- void puts2(char *str); 
+void _puts(char *str);
 
- void puts_half(char *str); 
+void print_rev(char *s);
 
- void print_array(int *a, int n); 
+void rev_string(char *s);
 
- char *_strcpy(char *dest, char *src); 
- int _atoi(char *s);
+void puts2(char *str);
+
+void puts_half(char *str);
+
+void print_array(int *a, int n);
+
+char *_strcpy(char *dest, char *src);
+
+int _atoi(char *s);
+#endif /* MAIN_H */
