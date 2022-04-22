@@ -1,26 +1,31 @@
 #include "main.h"
 
 /**
- * *_strcpy - copies string to destination
- * @dest : destination
- * @src  : source
- * Return: 0
- * On error, 0 is returned, and errno is set appropriately.
+ * _atoi - convert a string to an integer.
+ * @s: char type string
+ * Return: integer converted
  */
-char *_strcpy(char *dest, char *src)
+
+int _atoi(char *s)
 {
-	int counter = 0;
+	int i;
+	int res = 0;
+	int sig = -1;
+	int brk = 0;
 
-	int i = 0;
-
-	while (src[counter])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		counter = counter + 1;
+		if (s[i] == '-')
+			sig = sig * -1;
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			res = res * 10;
+			res -= (s[i] - '0');
+			brk = 1;
+		}
+		else if (brk == 1)
+			break;
 	}
-	for (i = 0; i < counter; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = '\0';
-	return (dest);
+	res = sig * res;
+	return (res);
 }
